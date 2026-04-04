@@ -15,16 +15,16 @@ It’s designed to be:
 - 🔗 Account linking (email ↔ OAuth provider)
 - 🖼️ Optional profile image + name syncing
 - ⚡ Built with App Router (Next.js)
-- 🎨 Styled using Tailwind + shadcn/ui
+- 🎨 Styled using Tailwind + shadcn/ui + Lucide
 - 🧱 Clean, scalable project structure
 
 ## 🧠 How It Works
 1. User signs in with Google via NextAuth
 2. NextAuth returns user profile data
-3. We run a find_or_create_user flow:
-  - Check if user exists via google_id
-  - Fallback to email (for account linking)
-  - Create user if none exists
+3. We run a `find_or_create_user` flow:
+    - Check if user exists via `google_id`
+    - Fallback to email (for account linking)
+    - Create user if none exists
 4. User data is stored in Supabase for future use
 
 This allows you to:
