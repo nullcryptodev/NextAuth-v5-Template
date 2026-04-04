@@ -79,12 +79,13 @@ create table users (
 - Supabase is used only as a database, not for auth
 
 ## 🧱 Tech Stack
-NextAuth.js v5
-Next.js (App Router)
-Supabase
-React
-Tailwind CSS
-shadcn/ui
+- NextAuth.js v5 - https://authjs.dev/
+- Next.js (App Router) - https://nextjs.org/
+- Supabase - https://supabase.com/
+- React - https://react.dev/
+- Tailwind CSS - https://tailwindcss.com/
+- shadcn/ui - https://ui.shadcn.com/
+- Lucide - https://lucide.dev/
 
 ## 📁 Project Structure (Simplified)
 ```
