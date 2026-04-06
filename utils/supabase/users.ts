@@ -18,14 +18,14 @@ interface FindOrCreateUserInput {
 /**
  * Standard return type
  */
-type FindOrCreateUserResult = {
-  data?: users;
+type Result <T> = {
+  data?: T;
   error?: string;
 };
 
 export const find_or_create_user = async (
   user: FindOrCreateUserInput
-): Promise<FindOrCreateUserResult> => {
+): Promise<Result<users>> => {
   if (!user.email) {
     return { error: "[ERROR] Could not detect user e-mail." };
   }
@@ -154,4 +154,21 @@ export const find_or_create_user = async (
     console.error("Unexpected error:", err);
     return { error: "[ERROR] Unexpected failure." };
   }
+};
+
+export const get_user_by_id = async (
+  id: number
+): Promise<Result<users>> => {
+  const { data, error } = await supabase
+    .from(TABLES.users)
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    console.error("Error fetching user:", error);
+    return { error: "[ERROR] Could not fetch user." };
+  }
+
+  return { data };
 };
