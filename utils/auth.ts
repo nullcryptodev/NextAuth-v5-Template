@@ -2,7 +2,7 @@ import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
 
 import { AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET, BETTER_AUTH_SECRET } from "./secrets"
-import { find_or_create_user } from "./supabase/users";
+import { find_or_create_user, get_user_by_id } from "./supabase/users";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   secret: BETTER_AUTH_SECRET,
