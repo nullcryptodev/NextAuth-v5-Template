@@ -32,15 +32,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           image: user.image
         });
 
-        if (data) {
-          token.id = data.id;
+        if (error) {
+          //toast
         }
-      }
-
-      if (token.id) {
-        const { data } = await get_user_by_id(token.id);
 
         if (data) {
+          token.userId = data.id;
           token.picture = data.profile_image;
         }
       }
