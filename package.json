@@ -1,6 +1,8 @@
 {
-  "name": "huddle-v1",
+  "name": "nextauth-v5-template",
   "version": "0.1.0",
+  "description": "a simple template using google oauth as a provider for next-auth v5.",
+  "author": "nullcryptodev",
   "private": true,
   "scripts": {
     "dev": "next dev",
